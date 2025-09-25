@@ -1,0 +1,130 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="d-flex flex-column min-vh-100 bg-light">
+  <main
+    class="container flex-grow-1 d-flex align-items-center justify-content-center py-5"
+  >
+    <div
+      class="row shadow rounded-4 bg-white overflow-hidden w-100"
+      style="max-width: 960px"
+    >
+      <!-- Left: Message -->
+      <div class="col-md-6 p-5 d-flex flex-column justify-content-center">
+        <div class="mb-4">
+          <span class="badge bg-danger me-2">404</span>
+          <h1 class="h3 d-inline fw-bold text-dark">Oops — page not found</h1>
+        </div>
+
+        <p class="text-muted">
+          The page you’re looking for doesn’t exist, or it may have moved. Try
+          searching for stays, experiences, or head back to the homepage.
+        </p>
+
+        <form action="/search" method="GET" class="my-3">
+          <div class="input-group">
+            <input
+              type="search"
+              name="q"
+              class="form-control"
+              placeholder="Search city, landmark, or experience"
+            />
+            <button class="btn btn-primary" type="submit">Search</button>
+          </div>
+        </form>
+
+        <div class="mt-3">
+          <p class="small text-muted mb-2">Quick links</p>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="/" class="btn btn-outline-secondary btn-sm">Home</a>
+            <a href="/listings" class="btn btn-outline-secondary btn-sm"
+              >All stays</a
+            >
+            <a href="/experiences" class="btn btn-outline-secondary btn-sm"
+              >Experiences</a
+            >
+            <a href="/help" class="btn btn-outline-secondary btn-sm"
+              >Help Center</a
+            >
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <p class="small text-muted mb-2">Trending destinations:</p>
+          <div class="d-flex flex-wrap gap-2">
+            <% (typeof popularCities !== 'undefined' ? popularCities :
+            ['Bali','Paris','Goa','Tokyo']).forEach(function(city){ %>
+            <a
+              href="/search?q=<%= encodeURIComponent(city) %>"
+              class="btn btn-outline-light border btn-sm"
+              ><%= city %></a
+            >
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Illustration -->
+      <div
+        class="col-md-6 bg-light d-flex align-items-center justify-content-center p-4"
+      >
+        <div class="text-center">
+          <svg
+            viewBox="0 0 600 400"
+            class="img-fluid rounded-3 border"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Magnifying glass over map illustration"
+          >
+            <rect x="0" y="0" width="600" height="400" rx="20" fill="#f8f9fa" />
+            <g transform="translate(40,40)">
+              <rect
+                x="40"
+                y="30"
+                width="420"
+                height="220"
+                rx="12"
+                fill="#fff"
+                stroke="#dee2e6"
+              />
+              <path
+                d="M80 80c40-30 120-40 180 0"
+                stroke="#f8d7da"
+                stroke-width="6"
+                fill="none"
+                stroke-linecap="round"
+              />
+              <circle
+                cx="340"
+                cy="120"
+                r="30"
+                fill="#e7f1ff"
+                stroke="#91c2fd"
+              />
+              <g transform="translate(380,160)">
+                <circle cx="0" cy="0" r="40" fill="#fff" stroke="#dee2e6" />
+                <path
+                  d="M-10 -10 L10 10 M10 -10 L-10 10"
+                  stroke="#dc3545"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </g>
+            </g>
+          </svg>
+
+          <p class="mt-3 text-muted">
+            No worries — the world is big. Let’s get you back exploring.
+          </p>
+          <div class="mt-3 d-flex justify-content-center gap-2">
+            <a href="/listing" class="btn btn-primary">Back to Home</a>
+            <a href="/listing" class="btn btn-outline-primary">Browse stays</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="text-center text-muted small py-3">
+    © <%= new Date().getFullYear() %> WanderLust
+  </footer>
+</body>

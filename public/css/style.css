@@ -1,0 +1,258 @@
+body {
+  /* background-color: pink; */
+
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+}
+.navbar {
+  height: 5rem;
+  position: sticky;
+  background-color: white;
+}
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+}
+.nav-link {
+  color: #222 !important;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
+  .fa-compass {
+    font-size: 1.5rem;
+  }
+}
+
+/* footer */
+.f-info a {
+  text-decoration: none;
+  color: #222;
+}
+.f-info a:hover {
+  text-decoration: underline;
+}
+.f-info-socials,
+.f-info-links {
+  width: 100%;
+}
+.f-info-socials i {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+.f-info {
+  height: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ebebeb;
+}
+
+/* Cards  */
+
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 0 !important;
+}
+.card-text p {
+  font-weight: 400 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
+
+/* Responsive Cards */
+@media (max-width: 576px) {
+  .listing-card {
+    margin-bottom: 1.5rem;
+  }
+  .card-img-top {
+    height: 15rem !important;
+  }
+}
+
+/* Card Effects  */
+
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* New Page  */
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* Edit Page  */
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+
+/* Show Page  */
+.show-img {
+  height: 50vh;
+}
+.btns {
+  display: flex;
+}
+.edit-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
+.show-card {
+  border: none !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Responsive Show Page */
+@media (max-width: 768px) {
+  .show-img {
+    height: 30vh;
+  }
+  .btns {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .btns .btn {
+    width: 100%;
+  }
+}
+/* star  */
+/* .fa-star{
+  font-size: 13px;
+  color: rgb(188, 188, 55);
+  border-color: orange;
+} */
+
+/* MAP */
+
+#map {
+  height: 31.25rem;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive Map */
+@media (max-width: 768px) {
+  #map {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #map {
+    height: 15rem;
+  }
+}
+
+/* General Responsive Utilities */
+@media (max-width: 768px) {
+  .col-8.offset-2 {
+    width: 95% !important;
+    margin-left: 2.5% !important;
+  }
+  
+  .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Form responsiveness */
+  .row .col-md-4, .row .col-md-8 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-8.offset-2 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  
+  .f-info {
+    height: auto;
+    padding: 1rem;
+  }
+  
+  .f-info-socials i {
+    margin-right: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Button responsiveness */
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Text size adjustments */
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* Image responsiveness */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Textarea responsiveness */
+  textarea {
+    min-height: 120px;
+  }
+}
+
+/* Additional responsive utilities */
+@media (max-width: 992px) {
+  .row-cols-lg-4 > * {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .row-cols-md-3 > * {
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .row-cols-sm-2 > * {
+    width: 100% !important;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem !important;
+  }
+  
+  .mb-3 {
+    margin-bottom: 1rem !important;
+  }
+}
