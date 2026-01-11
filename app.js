@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 if (process.env.NODE_ENV != "production") {
   require("dotenv").config();
@@ -11,7 +11,7 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 // const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust"
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = "mongodb://127.0.0.1:27017/wanderlust";
 
 const path = require("path");
 const methodOverride = require("method-override");
@@ -41,9 +41,9 @@ async function main() {
 }
 
 const store = MongoStore.create({
-  mongoUrl: dbUrl,
+  mongoUrl: "mongodb://127.0.0.1:27017/wanderlust",
   crypto: {
-    secret: process.env.SECRET,
+    secret: process.env.SECRET || "mysupersecretcode",
   },
   touchAfter: 24 * 3600,
 });
@@ -55,7 +55,7 @@ store.on("error",()=>{
 
 const sessionOptions = {
   store,
-  secret: process.env.SECRET,
+  secret: process.env.SECRET || "mysupersecretcode",
   resave: false,
   saveUninitialized: true,
   cookie: {
